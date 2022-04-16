@@ -1,0 +1,270 @@
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+   <style>
+          td, th {
+            border: 0px solid black;
+              
+         }
+         img{
+   padding: 5px;
+
+}
+      </style>
+
+  <title>Shape-guided Object Inpainting</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+ <!--  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+
+
+
+  </script> -->
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+  <link rel="stylesheet" href="https://unpkg.com/image-compare-viewer/dist/image-compare-viewer.min.css">
+  <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+<script src="https://unpkg.com/image-compare-viewer/dist/image-compare-viewer.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+
+</head>
+<!-- <body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="https://keunhong.com">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More Research
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="https://hypernerf.github.io">
+            HyperNeRF
+          </a>
+          <a class="navbar-item" href="https://nerfies.github.io">
+            Nerfies
+          </a>
+          <a class="navbar-item" href="https://latentfusion.github.io">
+            LatentFusion
+          </a>
+          <a class="navbar-item" href="https://photoshape.github.io">
+            PhotoShape
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</nav> -->
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Shape-guided Object Inpainting</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://zengxianyu.github.io">Yu Zeng</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://research.adobe.com/person/zhe-lin/"> Zhe Lin</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://engineering.jhu.edu/vpatel36/sciencex_teams/vishalpatel/">Vishal M. Patel</a><sup>1</sup>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Johns Hopkins University,</span>
+            <span class="author-block"><sup>2</sup>Adobe Research</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="tbd"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="tbd"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/zengxianyu/objpaint"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Results</h2>
+        <div class="content has-text-justified">
+<p>Input, background inpainting results, and results of the proposed object inpainting method.</p>
+<img src="https://s1.ax1x.com/2022/04/17/Ltz5m8.png" width=800>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+		Previous works on image inpainting mainly focus on inpainting background or partially missing objects, while the problem of inpainting an entire missing object remains unexplored. This work studies
+a new image inpainting task, i.e. shape-guided object inpainting. Given
+an incomplete input image, the goal is to fill in the hole by generating
+an object based on the context and implicit guidance given by the hole
+shape. Since previous methods for image inpainting are mainly designed
+for background inpainting, they are not suitable for this task. Therefore,
+we propose a new data preparation method and a novel Contextual Object Generator (CogNet) for the object inpainting task. On the data side,
+we incorporate object priors into training data by using object instances
+as holes. The CogNet has a two-stream architecture that combines the
+standard bottom-up image completion process with a top-down object
+generation process. A predictive class embedding module bridges the two
+streams by predicting the class of the missing object from the bottom-up
+features, from which a semantic object map is derived as the input of the
+top-down stream. Experiments demonstrate that the proposed method
+can generate realistic objects that fit the context in terms of both visual
+appearance and semantic meanings
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Method</h2>
+        <div class="content has-text-justified">
+<p>Overview of the proposed contextual object generation framework.</p>
+<img src="https://s1.ax1x.com/2022/04/17/LNpvoF.png" width=800>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <!-- Paper video. -->
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+     
+    <pre><code>@article{valanarasu2022interactive,
+  title={Interactive Portrait Harmonization},
+  author={Valanarasu, Jeya Maria Jose and Zhang, He and Zhang, Jianming and Wang, Yilin and Lin, Zhe and Echevarria, Jose and Ma, Yinglan and Wei, Zijun and Sunkavalli, Kalyan and Patel, Vishal M},
+  journal={arXiv preprint arXiv:2203.08216},
+  year={2022}
+}</code></pre>
+  </div>
+</section>
+
+
+<section class="section" >
+  <div class="container is-max-desktop content">
+    <h5 class="title">Website Template taken from <span class="author-block">
+              <a href="https://nerfies.github.io/">Nerfies</a></h5>
+
+  </div>
+</section>
+
+<script>
+    const viewers = document.querySelectorAll(".image-compare");
+    viewers.forEach((element) => {
+        let view = new ImageCompare(element, {
+            hoverStart: true,
+            addCircle: true
+        }).mount();
+    });
+
+    $(document).ready(function () {
+        var editor = CodeMirror.fromTextArea(document.getElementById("bibtex"), {
+            lineNumbers: false,
+            lineWrapping: true,
+            readOnly: true
+        });
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    });
+</script>
+</body>
+</html>
